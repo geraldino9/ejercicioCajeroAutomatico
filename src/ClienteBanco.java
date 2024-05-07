@@ -1,9 +1,12 @@
 public class ClienteBanco {
     //variables de instancia
     private String nombre;
+    private String segundoNombre;
     private String apellido;
     private Integer numeroCueta;
     private Integer nip;
+    private Double saldoDisponible;
+
 
     //constructor
     public ClienteBanco(String nombre, String apellido, Integer numeroCuenta, Integer nip){
@@ -13,7 +16,9 @@ public class ClienteBanco {
         this.nip=nip;
     }
 
-    public ClienteBanco(){}
+    public ClienteBanco(){
+        this.saldoDisponible = 50000.0;
+    }
 
     //métodos de acceso
     public String getNombre() {
@@ -46,5 +51,27 @@ public class ClienteBanco {
 
     public void setNip(Integer nip) {
         this.nip = nip;
+    }
+
+    public String getSegundoNombre() {
+        return segundoNombre;
+    }
+
+    public void setSegundoNombre(String segundoNombre) {
+        this.segundoNombre = segundoNombre;
+    }
+
+    public Double getSaldoDisponible() {
+        return saldoDisponible;
+    }
+
+    public void setSaldoDisponible(Double saldoDisponible) {
+        this.saldoDisponible = saldoDisponible;
+    }
+
+    public void imprimirDatosCliente(){
+        System.out.printf("Nombre completo %s\nnip: %d\nnumero de cuenta: %d\nsaldo disponible: %f\n ",this.nombre+" "+this.segundoNombre+" "+this.apellido, this.nip, this.numeroCueta, this.saldoDisponible );
+        System.out.println("---------------------------------------------------------");
+
     }
 }

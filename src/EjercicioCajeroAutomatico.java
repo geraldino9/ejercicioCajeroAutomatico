@@ -9,14 +9,19 @@ public class EjercicioCajeroAutomatico {
     //numero de identificacion personal
     static int nip=19988;
 
+   static ClienteBanco cliente = new ClienteBanco("Ricardo", "Rojas", 12345, 19988);
+    ClienteBanco cliente1 = new ClienteBanco("Pedro", "Perez", 98765, 11223);
+    ClienteBanco cliente3 = new ClienteBanco();
+
     public static void main(String[] args) {
+
         System.out.println("Bienvenido!! \n \n");
         //lee el número de cuenta del ciente
         System.out.print("Ingrese su número de cuenta: ");
         int inNumeroCuenta =lectura.nextInt();
 
         //lee el número de identificacion personal del cliente
-        System.out.print("Ingrese su número de cuenta: ");
+        System.out.print("Ingrese su nip: ");
         int inNip =lectura.nextInt();
 
         int opcionesDisponibles=0;
@@ -26,9 +31,9 @@ public class EjercicioCajeroAutomatico {
         // en caso de que no cumpla las conodiciones establcidas en el if entra por el else (si no)
         // UNA DE LAS CONDICIONES ES QUE EL NIP INGRESADO (inNip) debe ser un digito de 5 cifraz
         //vara validar que un numero sea de cinco cifras se puede realizar teniendo el cuenta el rango de 10000 a 99999
-        if(  numeroCueta == inNumeroCuenta && nip==inNip && (inNip>= 10000 && inNip <= 99999)){
+        if(  cliente.getNumeroCueta() == inNumeroCuenta && cliente.getNip()==inNip && (inNip>= 10000 && inNip <= 99999)){
             //aqui imprime el menú de opciones o acciones posibles a realizar
-            System.out.print("1 - Ver mi saldo \n 2 - retirar efectivo \n 3 - Depositar fondos \n 4 - Salir \n:");
+            System.out.print("1 - Ver mi saldo \n2 - retirar efectivo \n3 - Depositar fondos \n4 - Salir \n:");
             opcionesDisponibles = lectura.nextInt();
             if(opcionesDisponibles == 1){
                 System.out.println("Ver saldo Disponible del usuario");
